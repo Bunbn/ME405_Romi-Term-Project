@@ -28,14 +28,16 @@ We were tasked with completing a complex track with obstacles, quick bends and v
 
 Our Pololu Romi has a STM-32 Nucleo with a Calpoly custom 'Shoe of Brian' along with a Polou motor driver.
 
-Romi has two DC motor driven wheels with quadrature encoders. We mounted an IMU for orientation sensing, an IR sensor to track a black line, and a bump sensor for impact sensing.
+Romi has two DC motor driven wheels with quadrature encoders. We mounted an IMU for orientation sensing, an IR sensor to track a black line, and a bump sensor to detect phyiscal impacts, allowing us to prevent collisions.
 
 // talk briefly about each electronic
+
 
 ### Programming
 
 // talk about code style (OOP, tasks, etc.)
-
+We structured our code using Object-Oriented Programming principles and use task based architecture for streamlined modifications and control. Each part of the robot runs as a seperate task, allowing for easy debugging and organization.
+Motor Control uses a PI controller to set motor speed based on encoder feedback. The encoder uses quadrature signals and an AR reset to prevent overflow. Our IR sensor uses a centroid based algorithm to track black lines for navigation. 
 // talk briefly about some of the main files like PI control, IR sensor centroid stuff,
 encoder stuff(maybe the AR fixing), motor controlling
 
